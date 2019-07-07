@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javaapplication2.ferramentas.Anuidade;
 import javaapplication2.ferramentas.Seguro;
 import javaapplication2.ferramentas.Tabua;
+import javaapplication2.ferramentas.Utilitarios;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -88,6 +89,7 @@ public class SeguroTemporarioJFrame extends javax.swing.JFrame {
         jLabel4.setText("Diferimento");
 
         seguro_temporario_diferimento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        seguro_temporario_diferimento.setText("0");
         seguro_temporario_diferimento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         seguro_temporario_diferimento.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -113,7 +115,7 @@ public class SeguroTemporarioJFrame extends javax.swing.JFrame {
 
         seguro_temporario_resultado.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         seguro_temporario_resultado.setForeground(new java.awt.Color(255, 255, 255));
-        seguro_temporario_resultado.setText("0,00");
+        seguro_temporario_resultado.setText("R$ 0,00");
         seguro_temporario_resultado.setToolTipText("");
         seguro_temporario_resultado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -298,7 +300,7 @@ public class SeguroTemporarioJFrame extends javax.swing.JFrame {
                 DecimalFormat resFormat = new DecimalFormat("#.000");
 
                 //seguro_vitalicio_resultado.setText(resFormat.format(res));
-                seguro_temporario_resultado.setText(String.valueOf(res));
+                seguro_temporario_resultado.setText(Utilitarios.monetario(res));
                 
             }
         

@@ -3,15 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Avery/Documents/NetBeansProjects/CalculoAtuarial/src/javaapplication2/SeguroVitalicioJFrame.java</file>
-            <file>file:/C:/Users/Avery/Documents/NetBeansProjects/CalculoAtuarial/src/javaapplication2/ImportarTabuaJFrame.java</file>
-            <file>file:/C:/Users/Avery/Documents/NetBeansProjects/CalculoAtuarial/src/javaapplication2/MainWindowJFrame.java</file>
-            <file>file:/C:/Users/Avery/Documents/NetBeansProjects/CalculoAtuarial/src/javaapplication2/AnuidadeVitaliciaJFrame.java</file>
-            <file>file:/C:/Users/Avery/Documents/NetBeansProjects/CalculoAtuarial/src/javaapplication2/SeguroDotalJFrame.java</file>
-            <file>file:/C:/Users/Avery/Documents/NetBeansProjects/CalculoAtuarial/src/javaapplication2/SeguroTemporarioJFrame.java</file>
+            <file>file:/C:/Users/Avery/Documents/NetBeansProjects/CalculoAtuarial/src/javaapplication2/ferramentas/Anuidade.java</file>
             <file>file:/C:/Users/Avery/Documents/NetBeansProjects/CalculoAtuarial/src/javaapplication2/ferramentas/Seguro.java</file>
             <file>file:/C:/Users/Avery/Documents/NetBeansProjects/CalculoAtuarial/src/javaapplication2/ferramentas/Tabua.java</file>
-            <file>file:/C:/Users/Avery/Documents/NetBeansProjects/CalculoAtuarial/src/javaapplication2/AnuidadeTemporariaJFrame.java</file>
         </group>
     </open-files>
 </project-private>

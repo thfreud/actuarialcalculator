@@ -36,8 +36,7 @@ public class Seguro {
     public static double getSeguroVitalicio(int idade, double beneficio, double taxaJuros, int diferimento) {
         double res = 0;
         try {
-            Tabua.carregaTabua();
-            res = (Tabua.setMx(taxaJuros)[diferimento + idade + 1] / Tabua.setDx(taxaJuros)[idade]) * beneficio;
+            res = (Tabua.setMx(taxaJuros)[diferimento + idade] / Tabua.setDx(taxaJuros)[idade]) * beneficio;
 
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getStackTrace());
@@ -47,15 +46,31 @@ public class Seguro {
             System.out.println(e.getStackTrace());
             System.out.println(e.getMessage());
         }
-        return res;
+
+        return Utilitarios.round(res,3);
+    }
+    public static double getSeguroVitalicio(int idade, double beneficio, double taxaJuros) {
+        double res = 0;
+        try {
+            res = (Tabua.setMx(taxaJuros)[idade] / Tabua.setDx(taxaJuros)[idade]) * beneficio;
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        } catch (Error e) {
+
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        }
+
+        return Utilitarios.round(res,3);
     }
 
     //cálculo para seguro temporário
     public static double getSeguroTemporario(int idade, int duracao, double beneficio, double taxaJuros, int diferimento) {
         double res = 0;
         try {
-            Tabua.carregaTabua();
-            res = ((Tabua.setMx(taxaJuros)[diferimento + idade + 1] - Tabua.setMx(taxaJuros)[diferimento + idade + duracao]) / Tabua.setDx(taxaJuros)[idade]) * beneficio;
+            res = ((Tabua.setMx(taxaJuros)[diferimento + idade] - Tabua.setMx(taxaJuros)[diferimento + idade + duracao]) / Tabua.setDx(taxaJuros)[idade]) * beneficio;
 
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getStackTrace());
@@ -66,15 +81,31 @@ public class Seguro {
             System.out.println(e.getMessage());
         }
 
-        return res;
+        return Utilitarios.round(res,3);
+    }
+    
+    public static double getSeguroTemporario(int idade, int duracao, double beneficio, double taxaJuros) {
+        double res = 0;
+        try {
+            res = ((Tabua.setMx(taxaJuros)[idade] - Tabua.setMx(taxaJuros)[idade + duracao]) / Tabua.setDx(taxaJuros)[idade]) * beneficio;
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        } catch (Error e) {
+
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        }
+
+        return Utilitarios.round(res,3);
     }
 
     //calcula o prêmio único puro de um seguro dotal (diferido e imediato)
     public static double getSeguroDotal(int idade, int duracao, double beneficio, double taxaJuros, int diferimento) {
         double res = 0;
         try {
-            Tabua.carregaTabua();
-            res = ((Tabua.setMx(taxaJuros)[diferimento + idade + 1] - Tabua.setMx(taxaJuros)[diferimento + idade + duracao] + Tabua.setDx(taxaJuros)[idade + duracao + diferimento]) / Tabua.setDx(taxaJuros)[idade]) * beneficio;
+            res = ((Tabua.setMx(taxaJuros)[diferimento + idade] - Tabua.setMx(taxaJuros)[diferimento + idade + duracao] + Tabua.setDx(taxaJuros)[idade + duracao + diferimento]) / Tabua.setDx(taxaJuros)[idade]) * beneficio;
 
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getStackTrace());
@@ -85,7 +116,24 @@ public class Seguro {
             System.out.println(e.getMessage());
         }
 
-        return res;
+        return Utilitarios.round(res,3);
+    }
+    
+    public static double getSeguroDotal(int idade, int duracao, double beneficio, double taxaJuros) {
+        double res = 0;
+        try {
+            res = ((Tabua.setMx(taxaJuros)[idade] - Tabua.setMx(taxaJuros)[idade + duracao] + Tabua.setDx(taxaJuros)[idade + duracao]) / Tabua.setDx(taxaJuros)[idade]) * beneficio;
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        } catch (Error e) {
+
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        }
+
+        return Utilitarios.round(res,3);
     }
 
 }

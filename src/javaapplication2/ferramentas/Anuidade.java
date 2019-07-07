@@ -33,20 +33,44 @@ public class Anuidade {
 
         double res = 0;
         try {
-            //Tabua.carregaTabua();
             if (postecipada == true) {
                 res = (Tabua.setNx(taxaJuros)[diferimento + idade + 1] / Tabua.setDx(taxaJuros)[idade]) * beneficio;
             } else {
                 res = (Tabua.setNx(taxaJuros)[diferimento + idade] / Tabua.setDx(taxaJuros)[idade]) * beneficio;
             }
         } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
         } catch (Error e) {
-            e.printStackTrace();
+
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
         }
 
-        return res;
+        return Utilitarios.round(res,3);
     }
+    
+    public static double getAnuidadeVitalicia(int idade, double beneficio, boolean postecipada, double taxaJuros) {
+
+        double res = 0;
+        try {
+            if (postecipada == true) {
+                res = (Tabua.setNx(taxaJuros)[idade + 1] / Tabua.setDx(taxaJuros)[idade]) * beneficio;
+            } else {
+                res = (Tabua.setNx(taxaJuros)[idade] / Tabua.setDx(taxaJuros)[idade]) * beneficio;
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        } catch (Error e) {
+
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        }
+
+        return Utilitarios.round(res,3);
+    }
+
 
     //método para calcular anuidade temporária
     /*
@@ -61,7 +85,6 @@ public class Anuidade {
     public static double getAnuidadeTemporaria(int idade, int duracao, double beneficio, boolean postecipada, double taxaJuros, int diferimento) {
         double res = 0;
         try {
-            //Tabua.carregaTabua();
             if (postecipada == true) {
                 res = ((Tabua.setNx(taxaJuros)[diferimento + idade + 1] - Tabua.setNx(taxaJuros)[diferimento + idade + duracao + 1]) / Tabua.setDx(taxaJuros)[idade]) * beneficio;
             } else {
@@ -76,7 +99,27 @@ public class Anuidade {
             System.out.println(e.getMessage());
         }
 
-        return res;
+        return Utilitarios.round(res,3);
+    }
+    
+    public static double getAnuidadeTemporaria(int idade, int duracao, double beneficio, boolean postecipada, double taxaJuros) {
+        double res = 0;
+        try {
+            if (postecipada == true) {
+                res = ((Tabua.setNx(taxaJuros)[idade + 1] - Tabua.setNx(taxaJuros)[idade + duracao + 1]) / Tabua.setDx(taxaJuros)[idade]) * beneficio;
+            } else {
+                res = ((Tabua.setNx(taxaJuros)[idade] - Tabua.setNx(taxaJuros)[idade + duracao]) / Tabua.setDx(taxaJuros)[idade]) * beneficio;
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        } catch (Error e) {
+
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        }
+
+        return Utilitarios.round(res,3);
     }
 
 }

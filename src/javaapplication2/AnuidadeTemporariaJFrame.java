@@ -12,6 +12,7 @@ import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaapplication2.ferramentas.Anuidade;
+import javaapplication2.ferramentas.Utilitarios;
 import javaapplication2.ferramentas.Tabua;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
@@ -87,6 +88,7 @@ public class AnuidadeTemporariaJFrame extends javax.swing.JFrame {
         jLabel4.setText("Diferimento");
 
         anuidade_temporaria_diferimento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        anuidade_temporaria_diferimento.setText("0");
         anuidade_temporaria_diferimento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         anuidade_temporaria_diferimento.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -114,7 +116,7 @@ public class AnuidadeTemporariaJFrame extends javax.swing.JFrame {
 
         anuidade_temporaria_resultado.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         anuidade_temporaria_resultado.setForeground(new java.awt.Color(255, 255, 255));
-        anuidade_temporaria_resultado.setText("0,00");
+        anuidade_temporaria_resultado.setText("R$ 0,00");
         anuidade_temporaria_resultado.setToolTipText("");
         anuidade_temporaria_resultado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -141,7 +143,9 @@ public class AnuidadeTemporariaJFrame extends javax.swing.JFrame {
         anuidade_temporaria_duracao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         anuidade_temporaria_beneficio.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        anuidade_temporaria_beneficio.setToolTipText("");
         anuidade_temporaria_beneficio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        anuidade_temporaria_beneficio.setName(""); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -203,6 +207,8 @@ public class AnuidadeTemporariaJFrame extends javax.swing.JFrame {
                 .addComponent(anuidade_temporaria_postecipada)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        anuidade_temporaria_beneficio.getAccessibleContext().setAccessibleName("");
 
         anuidade_temporaria_calcular.setText("Calcular");
         anuidade_temporaria_calcular.addActionListener(new java.awt.event.ActionListener() {
@@ -305,7 +311,7 @@ public class AnuidadeTemporariaJFrame extends javax.swing.JFrame {
                     Double.valueOf(anuidade_temporaria_taxa_juros.getText()),
                     Integer.parseInt(anuidade_temporaria_diferimento.getText()));
 
-                anuidade_temporaria_resultado.setText(String.valueOf(res));
+                anuidade_temporaria_resultado.setText(Utilitarios.monetario(res));
                 
             }
         

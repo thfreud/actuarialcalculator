@@ -73,6 +73,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
         menuSeguroDotal = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         jMenuItem5.setText("jMenuItem5");
 
@@ -163,7 +164,6 @@ public class MainWindowJFrame extends javax.swing.JFrame {
         jMenu1.add(jSeparator2);
 
         jMenuItem6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuItem6.setForeground(new java.awt.Color(204, 0, 51));
         jMenuItem6.setText("IMPORTAÇÃO DA TÁBUA");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,6 +171,15 @@ public class MainWindowJFrame extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem6);
+
+        jMenuItem3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuItem3.setText("SOBRE");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
 
@@ -269,6 +278,17 @@ public class MainWindowJFrame extends javax.swing.JFrame {
         sd.setResizable(false);
         sd.show();
     }//GEN-LAST:event_menuSeguroDotalActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        Sobre sob = new Sobre();
+        sob.setLocation(
+                (Toolkit.getDefaultToolkit().getScreenSize().width/2) - (sob.getSize().width/2),
+                (Toolkit.getDefaultToolkit().getScreenSize().height/2) - (sob.getSize().height/2));
+        sob.setResizable(false);
+        sob.show();
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
     
     
     /**
@@ -315,6 +335,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;

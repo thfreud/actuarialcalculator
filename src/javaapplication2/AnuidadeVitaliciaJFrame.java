@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaapplication2.ferramentas.Anuidade;
 import javaapplication2.ferramentas.Tabua;
+import javaapplication2.ferramentas.Utilitarios;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -85,6 +86,7 @@ public class AnuidadeVitaliciaJFrame extends javax.swing.JFrame {
         jLabel4.setText("Diferimento");
 
         anuidade_vitalicia_diferimento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        anuidade_vitalicia_diferimento.setText("0");
         anuidade_vitalicia_diferimento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         anuidade_vitalicia_diferimento.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -112,7 +114,7 @@ public class AnuidadeVitaliciaJFrame extends javax.swing.JFrame {
 
         anuidade_vitalicia_resultado.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         anuidade_vitalicia_resultado.setForeground(new java.awt.Color(255, 255, 255));
-        anuidade_vitalicia_resultado.setText("0,00");
+        anuidade_vitalicia_resultado.setText("R$ 0,00");
         anuidade_vitalicia_resultado.setToolTipText("");
         anuidade_vitalicia_resultado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -291,7 +293,7 @@ public class AnuidadeVitaliciaJFrame extends javax.swing.JFrame {
                     Double.valueOf(anuidade_vitalicia_taxa_juros.getText()),
                     Integer.parseInt(anuidade_vitalicia_diferimento.getText()));
 
-                anuidade_vitalicia_resultado.setText(String.valueOf(res));
+                anuidade_vitalicia_resultado.setText(Utilitarios.monetario(res));
                 
             }
         

@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javaapplication2.ferramentas.Anuidade;
 import javaapplication2.ferramentas.Seguro;
 import javaapplication2.ferramentas.Tabua;
+import javaapplication2.ferramentas.Utilitarios;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -88,6 +89,7 @@ public class SeguroDotalJFrame extends javax.swing.JFrame {
         jLabel4.setText("Diferimento");
 
         seguro_dotal_diferimento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        seguro_dotal_diferimento.setText("0");
         seguro_dotal_diferimento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         seguro_dotal_diferimento.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -113,7 +115,7 @@ public class SeguroDotalJFrame extends javax.swing.JFrame {
 
         seguro_dotal_resultado.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         seguro_dotal_resultado.setForeground(new java.awt.Color(255, 255, 255));
-        seguro_dotal_resultado.setText("0,00");
+        seguro_dotal_resultado.setText("R$ 0,00");
         seguro_dotal_resultado.setToolTipText("");
         seguro_dotal_resultado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -298,7 +300,7 @@ public class SeguroDotalJFrame extends javax.swing.JFrame {
                 DecimalFormat resFormat = new DecimalFormat("#.000");
 
                 //seguro_vitalicio_resultado.setText(resFormat.format(res));
-                seguro_dotal_resultado.setText(String.valueOf(res));
+                seguro_dotal_resultado.setText(Utilitarios.monetario(res));
                 
             }
         
