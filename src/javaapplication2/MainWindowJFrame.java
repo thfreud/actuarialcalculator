@@ -57,6 +57,13 @@ public class MainWindowJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -73,9 +80,24 @@ public class MainWindowJFrame extends javax.swing.JFrame {
         menuSeguroDotal = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         jMenuItem5.setText("jMenuItem5");
+
+        jMenuItem3.setText("jMenuItem3");
+
+        jMenu5.setText("File");
+        jMenuBar2.add(jMenu5);
+
+        jMenu6.setText("Edit");
+        jMenuBar2.add(jMenu6);
+
+        jMenu7.setText("File");
+        jMenuBar3.add(jMenu7);
+
+        jMenu8.setText("Edit");
+        jMenuBar3.add(jMenu8);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora Atuarial");
@@ -172,16 +194,26 @@ public class MainWindowJFrame extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem6);
 
-        jMenuItem3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuItem3.setText("SOBRE");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuBar1.add(jMenu1);
+
+        jMenu4.setText("SOBRE");
+        jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenu4ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu1);
+        jMenuItem4.setText("Sobre");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem4);
+        jMenuItem4.getAccessibleContext().setAccessibleName("Sobre");
+
+        jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
 
@@ -279,16 +311,25 @@ public class MainWindowJFrame extends javax.swing.JFrame {
         sd.show();
     }//GEN-LAST:event_menuSeguroDotalActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
+        // TODO add your handling code here:
         Sobre sob = new Sobre();
         sob.setLocation(
                 (Toolkit.getDefaultToolkit().getScreenSize().width/2) - (sob.getSize().width/2),
                 (Toolkit.getDefaultToolkit().getScreenSize().height/2) - (sob.getSize().height/2));
         sob.setResizable(false);
         sob.show();
-        
+    }//GEN-LAST:event_jMenu4ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+        Sobre sob = new Sobre();
+        sob.setLocation(
+                (Toolkit.getDefaultToolkit().getScreenSize().width/2) - (sob.getSize().width/2),
+                (Toolkit.getDefaultToolkit().getScreenSize().height/2) - (sob.getSize().height/2));
+        sob.setResizable(false);
+        sob.show();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
     
     
     /**
@@ -332,10 +373,18 @@ public class MainWindowJFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
