@@ -47,7 +47,7 @@ public class Seguro {
             System.out.println(e.getMessage());
         }
 
-        return Utilitarios.round(res,3);
+        return(res);
     }
     public static double getSeguroVitalicio(int idade, double beneficio, double taxaJuros) {
         double res = 0;
@@ -63,7 +63,7 @@ public class Seguro {
             System.out.println(e.getMessage());
         }
 
-        return Utilitarios.round(res,3);
+        return(res);
     }
 
     //cálculo para seguro temporário
@@ -81,7 +81,7 @@ public class Seguro {
             System.out.println(e.getMessage());
         }
 
-        return Utilitarios.round(res,3);
+        return(res);
     }
     
     public static double getSeguroTemporario(int idade, int duracao, double beneficio, double taxaJuros) {
@@ -98,7 +98,7 @@ public class Seguro {
             System.out.println(e.getMessage());
         }
 
-        return Utilitarios.round(res,3);
+        return(res);
     }
 
     //calcula o prêmio único puro de um seguro dotal (diferido e imediato)
@@ -116,7 +116,7 @@ public class Seguro {
             System.out.println(e.getMessage());
         }
 
-        return Utilitarios.round(res,3);
+        return(res);
     }
     
     public static double getSeguroDotal(int idade, int duracao, double beneficio, double taxaJuros) {
@@ -133,7 +133,7 @@ public class Seguro {
             System.out.println(e.getMessage());
         }
 
-        return Utilitarios.round(res,3);
+        return(res);
     }
 
 }

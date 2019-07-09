@@ -106,7 +106,7 @@ public class Tabua {
         double[] Dx = new double[qx.length + 1];
         int i = 0;
         for (double row : setLx()) {
-            Dx[i] = row / Math.pow((1 + taxaJuros), i + 1);
+            Dx[i] = row / Math.pow((1 + taxaJuros), i);
             i++;
         }
         return Dx;

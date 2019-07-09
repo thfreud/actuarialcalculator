@@ -47,7 +47,7 @@ public class Anuidade {
             System.out.println(e.getMessage());
         }
 
-        return Utilitarios.round(res,3);
+        return(res);
     }
     
     public static double getAnuidadeVitalicia(int idade, double beneficio, boolean postecipada, double taxaJuros) {
@@ -68,7 +68,7 @@ public class Anuidade {
             System.out.println(e.getMessage());
         }
 
-        return Utilitarios.round(res,3);
+        return(res);
     }
 
 
@@ -99,7 +99,7 @@ public class Anuidade {
             System.out.println(e.getMessage());
         }
 
-        return Utilitarios.round(res,3);
+        return res;
     }
     
     public static double getAnuidadeTemporaria(int idade, int duracao, double beneficio, boolean postecipada, double taxaJuros) {
@@ -119,7 +119,7 @@ public class Anuidade {
             System.out.println(e.getMessage());
         }
 
-        return Utilitarios.round(res,3);
+        return(res);
     }
 
 }
